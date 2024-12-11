@@ -1,8 +1,8 @@
-slug: isaps
+slug: isaps-data-dictionary
 visit: timepoint
 charts:
-- chart: demo_sex
-  title: Sex
+- chart: gender
+  title: gender
 
 webservers:
   - name: production

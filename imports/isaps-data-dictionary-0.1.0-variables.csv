@@ -1,0 +1,4 @@
+folder,id,display_name,description,type,units,domain,labels,calculation,commonly_used,forms
+Sociodemographics,age,Age at time of study in years,,integer,years,,,,,
+Sociodemographics,gender,Gender of the participant,,choices,,gender,,,,
+Administrative,subject,ISAPS Subject Identifier,,identifier,,,,,,
