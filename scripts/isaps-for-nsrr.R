@@ -40,5 +40,3 @@ harmonized_data<-data[,c("subject","age", "gender","timepoint")]%>%
 
 write.csv(harmonized_data, file = "/Volumes/BWH-SLEEPEPI-NSRR-STAGING/20191126-barger-data/nsrr-prep/_releases/0.1.0.pre/isaps-harmonized-dataset-0.1.0.pre.csv", row.names = FALSE, na='')
 
-
-
