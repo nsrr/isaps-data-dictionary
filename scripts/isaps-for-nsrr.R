@@ -40,3 +40,10 @@ harmonized_data<-data[,c("subject","age", "gender","timepoint")]%>%
 
 write.csv(harmonized_data, file = "/Volumes/BWH-SLEEPEPI-NSRR-STAGING/20191126-barger-data/nsrr-prep/_releases/0.1.0.pre/isaps-harmonized-dataset-0.1.0.pre.csv", row.names = FALSE, na='')
 
+
+#to check the unmatched subject id and edf
+#id_subjects <- gsub("^[0-9]{2}(.+)I$", "\\1", id)
+#unmatched_ids <- id[!(id_subjects %in% data$subject)]
+#print("EDFs without matching subjects:")
+#print(unmatched_ids)
+
