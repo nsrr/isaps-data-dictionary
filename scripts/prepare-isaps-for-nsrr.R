@@ -26,7 +26,7 @@ for (i in 1:nrow(data)) {
 data$raw_folder_name[data$subject == "O1"] <- "23O1I_EDF"
 data$filename_id[data$subject == "O1"] <- "23O1I"
 
-write.csv(data,file = "/Volumes/BWH-SLEEPEPI-NSRR-STAGING/20191126-barger-data/nsrr-prep/_releases/0.1.0.pre/isaps-dataset-0.1.0.pre.csv", row.names = FALSE, na='')
+write.csv(data,file = "/Volumes/BWH-SLEEPEPI-NSRR-STAGING/20191126-barger-data/nsrr-prep/_releases/0.1.0/isaps-dataset-0.1.0.csv", row.names = FALSE, na='')
 
 # Harmonized data
 harmonized_data<-data[,c("subject","age", "gender","timepoint")]%>%
@@ -38,7 +38,7 @@ harmonized_data<-data[,c("subject","age", "gender","timepoint")]%>%
                   TRUE ~ "not reported"
                 )) %>% select(nsrrid,timepoint,nsrr_age,nsrr_sex)
 
-write.csv(harmonized_data, file = "/Volumes/BWH-SLEEPEPI-NSRR-STAGING/20191126-barger-data/nsrr-prep/_releases/0.1.0.pre/isaps-harmonized-dataset-0.1.0.pre.csv", row.names = FALSE, na='')
+write.csv(harmonized_data, file = "/Volumes/BWH-SLEEPEPI-NSRR-STAGING/20191126-barger-data/nsrr-prep/_releases/0.1.0.pre/isaps-harmonized-dataset-0.1.0.csv", row.names = FALSE, na='')
 
 
 #to check the unmatched subject id and edf
@@ -46,4 +46,3 @@ write.csv(harmonized_data, file = "/Volumes/BWH-SLEEPEPI-NSRR-STAGING/20191126-b
 #unmatched_ids <- id[!(id_subjects %in% data$subject)]
 #print("EDFs without matching subjects:")
 #print(unmatched_ids)
-
