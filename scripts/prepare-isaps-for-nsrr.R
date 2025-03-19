@@ -25,20 +25,21 @@ for (i in 1:nrow(data)) {
 }
 data$raw_folder_name[data$subject == "O1"] <- "23O1I_EDF"
 data$filename_id[data$subject == "O1"] <- "23O1I"
+data$nsrrid <- data$subject
 
-write.csv(data,file = "/Volumes/BWH-SLEEPEPI-NSRR-STAGING/20191126-barger-data/nsrr-prep/_releases/0.1.0/isaps-dataset-0.1.0.csv", row.names = FALSE, na='')
+write.csv(data,file = "/Volumes/BWH-SLEEPEPI-NSRR-STAGING/20191126-barger-data/nsrr-prep/_releases/0.1.0.pre/isaps-dataset-0.1.0.pre.csv", row.names = FALSE, na='')
 
 # Harmonized data
-harmonized_data<-data[,c("subject","age", "gender","timepoint")]%>%
+harmonized_data<-data[,c("raw_folder_name", "filename_id","subject","age", "gender","timepoint")]%>%
   dplyr::mutate(nsrrid=subject,
                 nsrr_age=age,
                 nsrr_sex=dplyr::case_when(
                   gender==0 ~ "male",
                   gender==1 ~ "female",
                   TRUE ~ "not reported"
-                )) %>% select(nsrrid,timepoint,nsrr_age,nsrr_sex)
+                )) %>% select(nsrrid,timepoint,nsrr_age,nsrr_sex,raw_folder_name,filename_id)
 
-write.csv(harmonized_data, file = "/Volumes/BWH-SLEEPEPI-NSRR-STAGING/20191126-barger-data/nsrr-prep/_releases/0.1.0.pre/isaps-harmonized-dataset-0.1.0.csv", row.names = FALSE, na='')
+write.csv(harmonized_data, file = "/Volumes/BWH-SLEEPEPI-NSRR-STAGING/20191126-barger-data/nsrr-prep/_releases/0.1.0.pre/isaps-harmonized-dataset-0.1.0.pre.csv", row.names = FALSE, na='')
 
 
 #to check the unmatched subject id and edf
